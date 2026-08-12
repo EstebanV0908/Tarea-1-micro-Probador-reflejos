@@ -128,8 +128,8 @@ flowchart TD
     K -- Sí --> L["Comparar ODR actual contra bit de PE11 (objetivo)"]
 
     L --> M{Coincide?}
-    M -- Sí --> N["Victoria:<br/>parpadea PE11 x3<br/>(500 ms ON / 500 ms OFF)"]
-    M -- No --> O["Derrota:<br/>congela el LED erroneo<br/>durante 2000 ms"]
+    M -- Sí --> N["Victoria: parpadea PE11 x3 (500 ms ON / 500 ms OFF)"]
+    M -- No --> O["Derrota: congela el LED erróneo durante 2000 ms"]
 
     N --> P["Reiniciar estado del juego"]
     O --> P
