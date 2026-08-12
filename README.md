@@ -171,14 +171,14 @@ flowchart TD
 graph LR
     MCU["STM32F407VET6"]
 
-    MCU -->|PE7| R1["R 220-330Ω"] --> LED1(("LED 1"))
-    MCU -->|PE8| R2["R 220-330Ω"] --> LED2(("LED 2"))
-    MCU -->|PE9| R3["R 220-330Ω"] --> LED3(("LED 3"))
-    MCU -->|PE10| R4b["R 220-330Ω"] --> LED4(("LED 4"))
-    MCU -->|PE11| R5["R 220-330Ω"] --> LED5(("LED 5 - OBJETIVO"))
-    MCU -->|PE12| R6["R 220-330Ω"] --> LED6(("LED 6"))
-    MCU -->|PE13| R7["R 220-330Ω"] --> LED7(("LED 7"))
-    MCU -->|PE14| R8b["R 220-330Ω"] --> LED8(("LED 8"))
+    MCU -->|PE7|--> LED1(("LED 1"))
+    MCU -->|PE8|--> LED2(("LED 2"))
+    MCU -->|PE9|--> LED3(("LED 3"))
+    MCU -->|PE10|--> LED4(("LED 4"))
+    MCU -->|PE11|--> LED5(("LED 5 - OBJETIVO"))
+    MCU -->|PE12|--> LED6(("LED 6"))
+    MCU -->|PE13|--> LED7(("LED 7"))
+    MCU -->|PE14|--> LED8(("LED 8"))
 
     LED1 & LED2 & LED3 & LED4 & LED5 & LED6 & LED7 & LED8 --> GND["GND"]
 
