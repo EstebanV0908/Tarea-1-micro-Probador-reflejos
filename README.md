@@ -136,7 +136,7 @@ flowchart TD
     P --> G
 
     J -- No --> G
-    J -- Sí --> Q["R9=0<br/>Encender LED en posición R8"]
+    J -- Sí --> Q["R9=0 Encender LED en posición R8"]
     Q --> R{"R8 == 0?"}
     R -- Sí --> S["Apagar PE14 (cierre del ciclo anterior)"]
     R -- No --> T["Apagar LED anterior (bit R8+7-1)"]
