@@ -7,7 +7,7 @@ Firmware en ensamblador Thumb-2 puro (sin CMSIS, sin HAL, sin archivo de arranqu
 ```
 /
 ├── src/
-│   └── reflex_tester.s     # Programa completo en ensamblador Thumb-2
+│   └── Tarea 1.s     # Programa completo en ensamblador Thumb-2
 └── README.md                 # Este archivo (documentación técnica)
 ```
 
