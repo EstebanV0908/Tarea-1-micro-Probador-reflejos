@@ -53,7 +53,7 @@ Esto reduce drásticamente la probabilidad de que un rebote mecánico (que típi
 
 ### 2.1 Fuente de reloj
 
-El programa no reconfigura el árbol de reloj (no toca `RCC_CFGR`, `PLLCFGR`, ni el registro de conmutación de fuente), por lo que el sistema permanece en su configuración de reset: **HSI interno a 16 MHz**, con los prescaladores AHB/APB en `/1`. `SYST_CSR.CLKSOURCE = 1` selecciona explícitamente el reloj del procesador (no el reloj externo `/8`), por lo que el SysTick cuenta directamente a la frecuencia de la CPU:
+El programa no reconfigura el árbol de reloj (no toca `RCC_CFGR`, `PLLCFGR`, ni el registro de conmutación de fuente), por lo que el sistema permanece en su configuración de reset: **reloj interno a 16 MHz**, con los prescaladores AHB/APB en `/1`. `SYST_CSR.CLKSOURCE = 1` selecciona el reloj del procesador (no el reloj externo `/8`), por lo que el SysTick cuenta directamente a la frecuencia de la CPU:
 
 ```
 f_SYSCLK = 16 MHz  (HSI, sin PLL)
