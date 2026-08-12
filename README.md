@@ -1,6 +1,6 @@
 # Probador de Reflejos con Matriz de LEDs — STM32F407VE
 
-Firmware en ensamblador Thumb-2 puro (sin CMSIS, sin HAL, sin archivo de arranque de fabricante) para un probador de reflejos: un LED recorre una fila de 8 LEDs (PE7–PE14) de forma continua, y el usuario debe presionar un pulsador (PA0) en el instante en que el LED encendido coincida con el LED objetivo (PE11, la posición central de la fila).
+Firmware en ensamblador utilizando segger para un probador de reflejos: un LED recorre una fila de 8 LEDs (PE7–PE14) de forma continua, y el usuario debe presionar un pulsador (PA0) en el instante en que el LED encendido coincida con el LED objetivo (PE11, la posición central de la fila).
 
 ## Estructura del repositorio
 
