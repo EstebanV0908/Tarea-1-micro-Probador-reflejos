@@ -108,7 +108,7 @@ loop:
        MOV R9, #0
        B instruccion
 instruccion:
-           
+           // enciende el led correspondiente de la matriz
        LDR R0, =GPIOE_BASE
        LDR R1, [R0, #ODR_OFFSET]
        MOV R2, #1
@@ -120,6 +120,7 @@ instruccion:
        BEQ borrar
        B continuar
 borrar:
+       //Apaga únicamente el led correspondiente al ODR14
        LDR R0, =GPIOE_BASE
        LDR R1, [R0, #ODR_OFFSET]
        MOV R2, #1
@@ -128,6 +129,7 @@ borrar:
        STR R1, [R0, #ODR_OFFSET]
        B continuar
 continuar:
+       //Apaga el led anterior al encendido actualmente
        LSR R2, R2, #1
        BIC R1, R1, R2
        STR R1, [R0, #ODR_OFFSET]
@@ -138,22 +140,13 @@ continuar:
 
        MOV R8, #0
       b loop
-encender:
-       LDR R0, =GPIOE_BASE
-       LDR R1, [R0, #ODR_OFFSET]
-       MOV R2, #1
-       LSL R2, R2, #11
-       ORR R1, R1, R2
-       STR R1, [R0, #ODR_OFFSET]
-       b loop
-        .thumb_func
-
 SysTick_Handler:
         ADD R9,  R9,  #1
         ADD R10, R10, #1
         ADD R7,  R7,  #1
         BX LR
 boton:
+        // Antirebote de 10ms
         MOV R10, #0
         LDR R0, =GPIOA_BASE
         LDR R1, [R0, #IDR_OFFSET]
@@ -164,6 +157,7 @@ boton:
         
         B loop
 pulso:
+        // Comprueba si el led seleccionado es el correcto y actua en base a eso
         MOV R12, 2
         LDR R0, =GPIOE_BASE
         LDR R1, [R0, #ODR_OFFSET]
